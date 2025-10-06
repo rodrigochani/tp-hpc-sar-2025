@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+SLC_FINE_LOCAL/
+Coarse/
+*.slc*
+*.vrt
+*.xml
+benchmarks/*.txt
+*.bak
