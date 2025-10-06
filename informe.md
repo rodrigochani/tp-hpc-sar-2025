@@ -63,14 +63,4 @@ Medición: /usr/bin/time -f "%e" -o benchmarks/<backend>_time.txt ...
 CSV → benchmarks/resultados.csv → gráficos t_barras.png y speedup.png.
 (Fijé *_NUM_THREADS=1 para no sobre-suscribir hilos de BLAS.)
 
-Checklist del curso
-
-✅ Código con herramientas vistas (multiprocessing; MPI planificado; GDAL/Rasterio).
-
-✅ Datos reales (imágenes SAR).
-
-✅ Medición y comparación con gráficos y speedup.
-
-✅ Discusión de por qué no aceleró en algunos casos y qué ajustes sí ayudan.
-
 Cierre. Con pocos datos y un kernel simple, el paralelismo “a lo bruto” no alcanza por I/O + overhead. Ajustando el diseño (menos IPC, I/O secuencial) conseguí un speedup modesto. Para mejorar en serio necesito más carga o kernels más intensivos; ahí MPI/GPU tienen más sentido. Me queda claro el balance datos vs. cómputo y que el diseño del pipeline es clave.
